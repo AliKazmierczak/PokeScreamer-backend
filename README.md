@@ -5,3 +5,7 @@
 npm install
 npm run start
 ```
+
+# Technolgies used
+- expressjs
+- mongodb
