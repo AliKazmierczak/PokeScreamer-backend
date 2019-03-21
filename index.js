@@ -1,24 +1,24 @@
 const Joi = require('joi');
-Joi.objectId=require('joi-objectid')(Joi);
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+Joi.objectId = require('joi-objectid')(Joi);
 const config = require('config');
-const login = require('./routes/login');
-const user = require('./routes/user');
+// const login = require('./routes/login');
+const users = require('./routes/users');
 
-// if(!config.get('vidlyKey')){
-//     console.error('FATAL ERROR! Key not defined.');
-//     process.exit(1);
-// };
+if(!config.get('pokeKey')){
+    console.error('FATAL ERROR! Key not defined.');
+    process.exit(1);
+};
 
-mongoose.connect('mongodb://localhost/projectVidly', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/Screamer', { useNewUrlParser: true })
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
 app.use(express.json());
-app.use('/api/login', login);
-app.use('/app/user', user);
+// app.use('/api/login', login);
+app.use('/users', users);
 
-const port = process.env.PORT || 27017
+const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`Listening on port ${port}...`));
