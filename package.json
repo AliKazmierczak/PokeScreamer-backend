@@ -1,0 +1,29 @@
+{
+  "name": "pokescreamer",
+  "version": "1.0.0",
+  "description": "app for raids",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hebiaczek/PokeScreamer-backend.git"
+  },
+  "keywords": [
+    "pokemon",
+    "go",
+    "raid"
+  ],
+  "author": "AlicKa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hebiaczek/PokeScreamer-backend/issues"
+  },
+  "homepage": "https://github.com/Hebiaczek/PokeScreamer-backend#readme",
+  "dependencies": {
+    "config": "^3.0.1",
+    "express": "^4.16.4",
+    "joi": "^14.3.1"
+  }
+}

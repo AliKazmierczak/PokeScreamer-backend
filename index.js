@@ -7,10 +7,10 @@ const config = require('config');
 const login = require('./routes/login');
 const user = require('./routes/user');
 
-if(!config.get('vidlyKey')){
-    console.error('FATAL ERROR! Key not defined.');
-    process.exit(1);
-};
+// if(!config.get('vidlyKey')){
+//     console.error('FATAL ERROR! Key not defined.');
+//     process.exit(1);
+// };
 
 mongoose.connect('mongodb://localhost/projectVidly', { useNewUrlParser: true })
     .then(() => console.log('Connected to MongoDB...'))
@@ -20,5 +20,5 @@ app.use(express.json());
 app.use('/api/login', login);
 app.use('/app/user', user);
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 27017
 app.listen(port, () => console.log(`Listening on port ${port}...`));
