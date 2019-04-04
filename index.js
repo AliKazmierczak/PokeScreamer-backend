@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 Joi.objectId = require('joi-objectid')(Joi);
 const config = require('config');
-// const login = require('./routes/login');
+const login = require('./routes/auth');
 const users = require('./routes/users');
 
 if(!config.get('pokeKey')){
@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost/Screamer', { useNewUrlParser: true })
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
 app.use(express.json());
-// app.use('/api/login', login);
+app.use('/auth', login);
 app.use('/users', users);
 
 const port = process.env.PORT || 3000
