@@ -22,7 +22,7 @@ router.post('/', async (req,res) =>{
     const token = user.generateAuthToken();
 
     res
-        .send("Thank you! We are now sending a validation e-mail to: ", req.body.email)
+        .send("Thank you! We are now sending a validation e-mail to: " + req.body.email, 201)
         .header('x-auth-token', token)
     console.log('Sending a validation e-mail to: ', req.body.email);
 });
